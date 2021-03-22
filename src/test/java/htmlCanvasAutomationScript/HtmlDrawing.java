@@ -18,6 +18,9 @@ public class HtmlDrawing {
 		driver.manage().window().maximize();
 		
 		
+		//Click on Draw a line
+		driver.findElement(By.xpath("//div[@class='toolbar']/input[@title='Draw a line']")).click();
+		
 		JavascriptExecutor js =(JavascriptExecutor)driver;
 		// Virtical line
 		js.executeScript("canvaso = document.getElementById('imageView');"
@@ -43,13 +46,23 @@ public class HtmlDrawing {
 		
 		Thread.sleep(5000);
 		
-		 
+		
+	  // Click on Rectangle
+		driver.findElement(By.xpath("//div[@class='toolbar']/input[@title='Draw a rectangle']")).click();	
+		
+		
 	  // Rectangle 
 		js.executeScript("var canvas, context, canvaso, contexto;" + 
 				"canvaso = document.getElementById('imageView');" + 
 				"context = canvaso.getContext('2d');" + 
 				"context.lineWidth = 5;" +  
 				"context.strokeRect(173, 366, 244, 104);");
+		
+		
+             Thread.sleep(3000);
+		
+	//Click on Eraser
+		driver.findElement(By.xpath("//div[@class='toolbar']/input[@title='Use eraser']")).click();
 		
 		
 	 // Erase horizontal line
